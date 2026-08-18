@@ -1,0 +1,119 @@
+{
+    "language_servers": [
+        "eslint",
+        "vtsls",
+        "effect-tsgo",
+        "tailwindcss-language-server"
+    ],
+    "languages": {
+        "JavaScript": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+                "source.organizeImports": false
+            }
+        },
+        "TypeScript": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+                "source.organizeImports": false
+            }
+        },
+        "TSX": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+                "source.organizeImports": false
+            }
+        },
+        "JSON": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "YAML": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "JSONC": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "Svelte": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+                "source.organizeImports": false
+            },
+            "language_servers": [
+                "svelte-language-server",
+                "tailwindcss-language-server",
+                "eslint"
+            ]
+        },
+        "CSS": {
+            "format_on_save": "on",
+            "formatter": [],
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true,
+                "source.organizeImports": false
+            }
+        },
+        "HTML": {
+            "format_on_save": "off",
+            "formatter": []
+        }
+    },
+    "lsp": {
+        "eslint": {
+            "settings": {
+                "codeActionsOnSave": {
+                    "source.fixAll.eslint": true
+                },
+                "format": true,
+                "packageManager": "bun",
+                "useESLintClass": true,
+                "experimental": {
+                    "useFlatConfig": true
+                },
+                "workingDirectories": ["."]
+            }
+        },
+        "tailwindcss-language-server": {
+            "settings": {
+                "classFunctions": ["cva", "cx", "tv"],
+                "experimental": {
+                    "classRegex": ["[cls|className]\\s\\:\\=\\s\"([^\"]*)"]
+                }
+            }
+        },
+        "vtsls": {
+            "initialization_options": {
+                "typescript": {
+                    "tsdk": "node_modules/typescript/lib"
+                },
+                "vtsls": {
+                    "autoUseWorkspaceTsdk": true
+                }
+            }
+        }
+    },
+    "tab_size": 4,
+    "hard_tabs": false,
+    "preferred_line_length": 120,
+    "remove_trailing_whitespace_on_save": true,
+    "ensure_final_newline_on_save": true
+}

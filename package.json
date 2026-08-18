@@ -1,0 +1,41 @@
+{
+    "name": "3d-render-ai",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "bun run --workspaces dev:hmr",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix"
+    },
+    "workspaces": {
+        "packages": [
+            "apps/*",
+            "packages/*"
+        ],
+        "catalog": {
+            "@antfu/eslint-config": "^9.3.0",
+            "@effect/language-service": "^0.87.2",
+            "@types/bun": "latest",
+            "effect": "^4.0.0-beta.107",
+            "eslint": "^9.5.0",
+            "eslint-plugin-format": "^2.0.1",
+            "eslint-plugin-solid": "^0.15.0",
+            "typescript": "^5"
+        }
+    },
+    "peerDependencies": {
+        "typescript": "catalog:"
+    },
+    "dependencies": {
+        "effect": "catalog:"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "catalog:",
+        "@effect/eslint-plugin": "^0.3.2",
+        "@effect/language-service": "catalog:",
+        "@types/bun": "catalog:",
+        "eslint": "catalog:",
+        "eslint-plugin-format": "catalog:",
+        "eslint-plugin-solid": "catalog:"
+    }
+}
