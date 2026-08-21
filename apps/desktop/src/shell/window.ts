@@ -1,5 +1,6 @@
 import { Context, Effect, Layer, Schema } from "effect"
 import { BrowserWindow, Updater } from "electrobun/bun"
+import { DEV_SERVER_URL } from "../shared/dev"
 import { Config } from "./config"
 
 // eslint-disable-next-line unicorn/throw-new-error
@@ -13,7 +14,7 @@ export class Window extends Context.Service<
     {
         start: () => Effect.Effect<BrowserWindow, WindowError>
     }
->()("src/shell/window") {
+>()("src/shell/window/Window") {
     static layer = Layer.effect(
         Window,
         Effect.gen(function* () {
@@ -21,7 +22,6 @@ export class Window extends Context.Service<
 
             const start = Effect.fn("Window.start")(function* () {
                 const title = yield* config.getTitle()
-                const configUrl = yield* config.getUrl()
 
                 const channel = yield* Effect.tryPromise({
                     try: async () => await Updater.localInfo.channel(),
@@ -34,14 +34,14 @@ export class Window extends Context.Service<
                             return "views://mainview/index.html"
                         }
 
-                        await fetch(configUrl, { method: "HEAD" })
+                        await fetch(DEV_SERVER_URL, { method: "HEAD" })
 
-                        return configUrl
+                        return DEV_SERVER_URL
                     },
                     catch: () => new WindowError({ message: "Vite dev server not running. Run 'bun run dev:hmr' for HMR support." }),
                 })
 
-                yield* Effect.log(`HMR enabled: Using Vite dev server at ${configUrl}`)
+                yield* Effect.log(`HMR enabled: Using Vite dev server at ${DEV_SERVER_URL}`)
 
                 return new BrowserWindow({
                     title,

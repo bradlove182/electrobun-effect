@@ -17,5 +17,6 @@ export default antfu(
             "yaml/indent": ["error", 4, { indicatorValueIndent: 2 }],
             "ts/no-explicit-any": ["error"],
         },
+        ignores: ["docs/*"],
     },
 )

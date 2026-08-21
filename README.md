@@ -1,4 +1,4 @@
-# 3d-render-ai
+# electrobun-effect
 
 To install dependencies:
 
